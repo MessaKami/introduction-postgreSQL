@@ -92,5 +92,52 @@ Si l'installation pose problème ou si vous préférez isoler pgAdmin, vous pouv
 
 ---
 
+## Conclusion
 
+Votre système est maintenant configuré avec Python 3.10, `pgAdmin 4` (via installation ou Docker), et `pgcli`. Ce guide vous permet de travailler efficacement avec PostgreSQL tout en maintenant votre installation de Python propre et sans conflits de versions.
+
+Pour toute question supplémentaire, consultez la documentation officielle :
+- [pgAdmin](https://www.pgadmin.org/docs/)
+- [pgcli](https://www.pgcli.com/)
+- [Docker](https://docs.docker.com/get-started/)
+
+--- 
+```
+
+
+## 3. Installer pgcli avec pipx
+
+`pgcli` est un outil de ligne de commande pour interagir avec PostgreSQL. Pour l'installer proprement et globalement sans affecter Python du système, nous utilisons `pipx`, qui crée des environnements isolés pour chaque package.
+
+### Étapes :
+
+1. **Installer pipx** :
+   ```bash
+   sudo apt install pipx
+   ```
+
+2. **Ajouter pipx au PATH** (si ce n’est pas déjà fait) :
+   ```bash
+   pipx ensurepath
+   ```
+
+3. **Installer pgcli avec pipx** :
+   ```bash
+   pipx install pgcli
+   ```
+
+4. **Vérifier l'installation de pgcli** :
+   ```bash
+   pgcli --version
+   ```
+
+   > **Remarque** : Si `pgcli` n'est toujours pas accessible globalement, ajoutez le chemin `~/.local/bin` à votre variable PATH dans `~/.bashrc` :
+   > ```bash
+   > echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+   > source ~/.bashrc
+   > ```
+
+---
+
+Ce guide inclut maintenant toutes les étapes nécessaires pour installer Python 3.10, pgAdmin 4, et `pgcli` en utilisant `pipx` sur Linux Mint. 
 
