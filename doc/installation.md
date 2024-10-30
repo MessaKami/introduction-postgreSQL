@@ -57,3 +57,40 @@ Si l'installation pose problème ou si vous préférez isoler pgAdmin, vous pouv
 
 3. **Accéder à pgAdmin 4** en ouvrant [http://localhost](http://localhost) dans votre navigateur et en vous connectant avec l'email et le mot de passe définis (`admin@domain.com` / `admin` dans cet exemple).
 
+## 3. Installer pgcli avec pipx
+
+`pgcli` est un outil de ligne de commande pour interagir avec PostgreSQL. Nous utiliserons `pipx` pour l'installer globalement et isoler les paquets Python du système.
+
+### Étapes :
+
+1. **Installer pipx** :
+   ```bash
+   sudo apt install pipx
+   ```
+
+2. **Installer pgcli avec pipx** :
+   ```bash
+   pipx install pgcli
+   ```
+
+3. **Assurer l’accès global à `pgcli`** :
+   Si vous recevez un avertissement indiquant que `pgcli` n’est pas accessible globalement, exécutez :
+   ```bash
+   pipx ensurepath
+   ```
+
+4. **Vérifier l'installation de pgcli** :
+   ```bash
+   pgcli --version
+   ```
+
+   > **Remarque** : Si `pgcli` n'est toujours pas accessible, ajoutez manuellement le chemin `~/.local/bin` à votre variable d'environnement PATH dans `~/.bashrc` :
+   > ```bash
+   > echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+   > source ~/.bashrc
+   > ```
+
+---
+
+
+
