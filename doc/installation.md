@@ -24,3 +24,36 @@ Pour installer `pgAdmin 4`, Python 3.10 est requis, même si Python 3.12 est ins
    python3.10 --version
    ```
 
+## 2. Installer pgAdmin 4
+
+Deux options sont disponibles : l'installation standard avec `apt` (requiert Python 3.10) ou l'utilisation d'un conteneur Docker si vous préférez éviter l'installation d'une version spécifique de Python.
+
+### Option A : Installation via `apt`
+
+1. **Ajouter le dépôt pgAdmin** :
+   ```bash
+   curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+   sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/jammy pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+   ```
+
+2. **Installer pgAdmin 4** :
+   ```bash
+   sudo apt install pgadmin4
+   ```
+
+### Option B : Utilisation de pgAdmin 4 via Docker
+
+Si l'installation pose problème ou si vous préférez isoler pgAdmin, vous pouvez le lancer dans un conteneur Docker.
+
+1. **Installer Docker** (si nécessaire) :
+   ```bash
+   sudo apt install docker.io
+   ```
+
+2. **Lancer pgAdmin 4 avec Docker** :
+   ```bash
+   docker run -p 80:80 --name pgadmin -e 'PGADMIN_DEFAULT_EMAIL=admin@domain.com' -e 'PGADMIN_DEFAULT_PASSWORD=admin' -d dpage/pgadmin4
+   ```
+
+3. **Accéder à pgAdmin 4** en ouvrant [http://localhost](http://localhost) dans votre navigateur et en vous connectant avec l'email et le mot de passe définis (`admin@domain.com` / `admin` dans cet exemple).
+
