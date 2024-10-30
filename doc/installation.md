@@ -101,6 +101,9 @@ Pour toute question supplémentaire, consultez la documentation officielle :
 - [pgcli](https://www.pgcli.com/)
 - [Docker](https://docs.docker.com/get-started/)
 
+Documentation non officielle pour l'installation de pgadmin4
+- [pgAdmin4](https://stackoverflow.com/questions/68777587/linux-mint-20-x-ubuntu-based-cant-install-pgadmin4)
+
 --- 
 ```
 
